@@ -1,0 +1,30 @@
+<!--
+  Generated template for the InfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Info</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <img src="{{student.get('profileImage').value}}">
+  </div>
+
+  <ion-item>
+    <ion-label>
+      ชื่อสินค้า : {{student.get('name').value}}
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      ราคา: {{student.get('age').value}}
+    </ion-label>
+  </ion-item>
+  <div padding> <button ion-button block (click)="goUpdatePage()">แก้ไขข้อมูล</button> </div>
+</ion-content>
