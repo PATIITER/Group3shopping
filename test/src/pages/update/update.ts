@@ -19,28 +19,28 @@ export class UpdatePage {
   newStudent: FormGroup
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,public fb: FormBuilder, public CallApi: CallApiProvider) {
-    this.newStudent = fb.group({
-      'id': null,
-      'name': [null,Validators.required],
-      'age': [null,Validators.required],
-      'profileImage':[null,Validators.required],
+    // this.newStudent = fb.group({
+    //   'id': null,
+    //   'name': [null,Validators.required],
+    //   'age': [null,Validators.required],
+    //   'profileImage':[null,Validators.required],
 
-    })
+    // })
   }
 
   ionViewDidEnter() {
     console.log('ionViewDidLoad UpdatePage');
-    let oldStudent =this.navParams.get('student');
-    this.newStudent.setValue(oldStudent);
-    console.log(this.newStudent.value);
+    // let oldStudent =this.navParams.get('student');
+    // this.newStudent.setValue(oldStudent);
+    // console.log(this.newStudent.value);
     
   }
-  update(){
-  this.CallApi.UpdateStudent(this.newStudent.value)
-      .subscribe(data => {
-        console.log("update.");
-        this.navCtrl.pop();
+  // update(){
+  // this.CallApi.UpdateStudent(this.newStudent.value)
+  //     .subscribe(data => {
+  //       console.log("update.");
+  //       this.navCtrl.pop();
 
-      });
-    }
+  //     });
+  //   }
 }

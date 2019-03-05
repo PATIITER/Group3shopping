@@ -1,35 +1,56 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      รายการสินค้า </ion-title>
+      รายการสินค้า
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="cart" color="primary"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-card color="primary">
+    <ion-card-content>
+        <ion-row text-center>
+          <ion-col col-5 align-self-center>
+            <h2>ชื่อสินค้า</h2>
+          </ion-col>
+          <ion-col col-3 align-self-center>
+            <h2>ราคา/หน่วย</h2>
+          </ion-col>
+          <ion-col col-2 align-self-center>
+            <h2>จำนวน</h2>
+          </ion-col>
+          <!-- <ion-col col-2 align-self-center>
+            <button ion-button>เพิ่ม</button>
+          </ion-col> -->
+        </ion-row>
+    </ion-card-content>
+  </ion-card>
   
-<ion-fab top right edge>
-  <button  ion-fab mini> <ion-icon name='cart'></ion-icon></button>
-  <ion-fab-list>
-   </ion-fab-list>
-   </ion-fab>
-  <ion-item *ngFor="let s of students; let i = index" >
-    <ion-row text-center>
-      <ion-col col-2 ailgn-self-center (click)="goInfoPage(s.id)"> 
-        {{ i+1 }}
+  <ion-item *ngFor="let p of products" >
+    <ion-row>
+      <ion-col col-5 ailgn-self-center> 
+          {{ p.productName }}
       </ion-col>
-      <ion-col col-6 ailgn-self-center (click)="goInfoPage(s.id)">
-        {{ s.name }}
-      </ion-col>
-      <ion-col col-2 ailgn-self-center (click)="goInfoPage(s.id)">
-        {{ s.age }}
+      <ion-col col-3 ailgn-self-center text-center>
+          {{ p.price }}
       </ion-col>
       <ion-col col-2 ailgn-self-center>
-        <button ion-button color="danger" (click)="delete(s.id)">ลบสินค้า</button>
+        <ion-item>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+        <ion-col col-2 ailgn-self-center>
+        <button ion-button color="secondary">เพิ่ม</button>
       </ion-col>
     </ion-row>
   </ion-item>
-  
-  <div padding> <button ion-button block (click)="goCreatePage()">เพิ่มสินค้า</button> </div>
-
-
 </ion-content>
+<ion-footer padding>
+  <button ion-button block color="primary" (click)="goCreatePage()">เพิ่มรายการสินค้า</button>
+</ion-footer>
