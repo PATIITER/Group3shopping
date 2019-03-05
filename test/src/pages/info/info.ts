@@ -20,30 +20,30 @@ export class InfoPage {
   student:FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,public CallApi:CallApiProvider , public fb:FormBuilder) {
-    this.student =fb.group({
-      'id':null,
-      'name': null,
-      'age':null,
-      'profileImage':null,
+    // this.student =fb.group({
+    //   'id':null,
+    //   'name': null,
+    //   'age':null,
+    //   'profileImage':null,
 
-    })
+    // })
   }
 
   ionViewDidEnter() {
     console.log('ionViewDidLoad InfoPage');
-    this.id =this.navParams.get('id');
-    this.get();
+    // this.id =this.navParams.get('id');
+    // this.get();
   }
-  get(){
-    this.CallApi.GetStudent(this.id).subscribe(data=>{
-      this.student.setValue(data);
-      console.log(this.student.value);
+//   get(){
+//     this.CallApi.GetStudent(this.id).subscribe(data=>{
+//       this.student.setValue(data);
+//       console.log(this.student.value);
       
-    })
-  }
-    goUpdatePage(){
-this.navCtrl.push('UpdatePage',{student: this.student.value});
-    }
+//     })
+//   }
+//     goUpdatePage(){
+// this.navCtrl.push('UpdatePage',{student: this.student.value});
+//     }
   
 
 }
