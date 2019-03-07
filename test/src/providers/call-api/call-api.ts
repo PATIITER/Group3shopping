@@ -14,20 +14,20 @@ export class CallApiProvider {
     console.log('Hello CallApiProvider Provider');
   }
 
-  public GetAllStudent()
+  public GetAllProducts()
   {
-      return this.http.get('https://localhost:5001/api/Classroom/GetAllStudents');
+      return this.http.get('https://localhost:5001/api/Classroom/GetAllProducts');
   }
-  public GetStudent(id :string){
-    return this.http.get('https://localhost:5001/api/Classroom/GetStudents/'+ id);
+  public GetProductbyId(id :string){
+    return this.http.get('https://localhost:5001/api/Classroom/GetProductbyId/'+ id);
   }
-  public CreateStudent(newstudent : any){
-    return this.http.post('https://localhost:5001/api/Classroom/CreateStudent/',newstudent);
+  public CreateProduct(newProduct : any){
+    return this.http.post('https://localhost:5001/api/Classroom/CreateProduct',newProduct);
   }
-  public UpdateStudent(newstudent : any){
-    return this.http.put('https://localhost:5001/api/Classroom/UpdateStudent/',newstudent);
+  public UpdateProduct(newProduct : any){
+    return this.http.put('https://localhost:5001/api/Classroom/UpdateProduct',newProduct);
   }
-  public DeleteStudent(id:string){
-    return this.http.delete('https://localhost:5001/api/Classroom/DeleteStudent/'+ id);
-  }
+  // public DeleteStudent(id:string){
+  //   return this.http.delete('https://localhost:5001/api/Classroom/DeleteStudent/'+ id);
+  // }
 }

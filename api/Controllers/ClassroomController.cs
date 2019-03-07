@@ -11,55 +11,54 @@ namespace api.Controllers
     [ApiController]
     public class ClassroomController : ControllerBase
     {
-        public static List<Product> Student = new List<Product>
+        public static List<Product> Product = new List<Product>
         {
             new Product{
                 Id = Guid.NewGuid().ToString(),
-                ProductName ="นายแดง",
+                ProductName ="ดินสอ",
                   Price = 5,
-                 Pieces = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAuYMJ0yTQq3XoYeHjrYstcCJnxKJEtlWnWP8aQviBS_lXnF64"
+                  Pieces = "https://dxxt5i7fka2g1.cloudfront.net/media/catalog/product/O/F/OFM1502780.jpg"
             },
             new Product{
                 Id = Guid.NewGuid().ToString(),
-                ProductName ="นายดำ",
-                  Price = 6,
-                 Pieces = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrocWot2tcvZduZ13z6KrxJ2YnT-66jHgphq0egIrWAb2Ap-Sm"
+                ProductName ="ไม้บรรทัด",
+                  Price = 15,
+                  Pieces = "https://www.goodchoiz.com/content/images/thumbs/0035572_%E0%B9%89%E0%B8%B1%E0%B9%87-%E0%B8%B4%E0%B9%8C-12_550.jpeg"
             },
             new Product{
                 Id = Guid.NewGuid().ToString(),
-                ProductName ="นายเขียว",
-                  Price = 7,
-                 Pieces = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUsoakftmf6A5PVKLwpeG-yfLmlXgdMzQeJw-N4dxi0UmYt4bB"
+                ProductName ="ยางลบ",
+                  Price = 10,
+                  Pieces = "https://ssfortunetrade.co.th/wp-content/uploads/2018/09/46.-Eraser-Quantum-QE600.jpg"
             },
 
         };
         [HttpGet]
-        public List<Product> GetAllStudents(){
-            return Student;
-
+        public List<Product> GetAllProducts(){
+            return Product;
         }
+
          [HttpGet("{id}")]
-        public Product GetStudents(string id){
-            return Student.Find(it=>it.Id==id);
-
+        public Product GetProductbyId(string id){
+            return Product.Find(it=>it.Id==id);
         }
+
         [HttpPost]
-        public  void CreateStudent([FromBody]Product newStudent) {
-            newStudent.Id = Guid.NewGuid().ToString();
-            Student.Add(newStudent);
+        public  void CreateProduct([FromBody]Product newProduct) {
+            newProduct.Id = Guid.NewGuid().ToString();
+            Product.Add(newProduct);
         }
           [HttpPut]
-        public  void UpdateStudent([FromBody]Product newStudent) {
+        public  void UpdateProduct([FromBody]Product newProduct) {
            
-            var oldStudent= Student.Find(it=>it.Id==newStudent.Id);
-            Student.Remove(oldStudent);
-            Student.Add(newStudent);
+            var oldProduct= Product.Find(it=>it.Id==newProduct.Id);
+            Product.Remove(oldProduct);
+            Product.Add(newProduct);
         }
-        [HttpDelete("{id}")]
-        public  void DeleteStudent(string id) {
-           
-            var student =Student.Find(it=>it.Id==id);
-            Student.Remove(student);
-        }
+        // [HttpDelete("{id}")]
+        // public  void DeleteStudent(string id) {
+        //     var student =Student.Find(it=>it.Id==id);
+        //     Student.Remove(student);
+        // }
      }
 }

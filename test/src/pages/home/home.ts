@@ -8,7 +8,7 @@ import { CallApiProvider } from '../../providers/call-api/call-api';
 })
 export class HomePage {
 
-  students: any;
+  products: any;
 
   constructor(public navCtrl: NavController, public CallApi: CallApiProvider) {
 
@@ -19,28 +19,29 @@ export class HomePage {
   }
 
   get() {
-    this.CallApi.GetAllStudent().subscribe(data => {
-      this.students = data;
-      console.log(this.students);
+    this.CallApi.GetAllProducts().subscribe(data => {
+      this.products = data;
+      console.log(this.products);
     });
   }
-  goInfoPage(id: string) {
-    console.log("go");
-    this.navCtrl.push('InfoPage', { id: id });
-  }
+
   goCreatePage() {
     console.log("test");
-
     this.navCtrl.push('CreatePage');
   }
-  delete(id :string){
-        this.CallApi.DeleteStudent(id)
-        .subscribe(data=>{
-            console.log("Delete.");
-            this.get();
+  // goInfoPage(id: string) {
+  //   console.log("go");
+  //   this.navCtrl.push('InfoPage', { id: id });
+  // }
+  
+  // delete(id :string){
+  //       this.CallApi.DeleteStudent(id)
+  //       .subscribe(data=>{
+  //           console.log("Delete.");
+  //           this.get();
             
 
-        })
+  //       })
 
   }
-}
+
