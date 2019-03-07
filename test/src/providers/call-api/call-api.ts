@@ -16,13 +16,13 @@ export class CallApiProvider {
 
   public GetAllProducts()
   {
-      return this.http.get('https://localhost:5001/api/Prosucts/GetAllProducts');
+      return this.http.get('https://localhost:5001/api/Products/GetAllProducts');
   }
   public GetProductbyId(id :string){
     return this.http.get('https://localhost:5001/api/Prosucts/GetProductbyId/'+ id);
   }
   public CreateProduct(newProduct : any){
-    return this.http.post('https://localhost:5001/api/Prosucts/CreateProduct',newProduct);
+    return this.http.post('https://localhost:5001/api/Products/CreateProduct',newProduct);
   }
   public UpdateProduct(newProduct : any){
     return this.http.put('https://localhost:5001/api/Prosucts/UpdateProduct',newProduct);
