@@ -1,18 +1,23 @@
 <ion-header>
+<<<<<<< HEAD
   <ion-navbar text-center>
+=======
+  <ion-navbar text-center color="dark">
+>>>>>>> sing update
     <ion-title>
       รายการสินค้า
     </ion-title>
 
     <ion-buttons end>
       <button ion-button icon-only>
-        <ion-icon name="cart" color="primary"></ion-icon>
+        <ion-icon name="cart"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+<<<<<<< HEAD
   <ion-card color="primary">
     <ion-card-content>
         <ion-row text-center>
@@ -26,29 +31,50 @@
             <h2>จำนวน</h2>
           </ion-col>
         </ion-row>
+=======
+  <ion-card color="dark">
+    <ion-card-content >
+      <ion-row text-center>
+        <ion-col col-5 align-self-center>
+          <h2>ชื่อสินค้า</h2>
+        </ion-col>
+        <ion-col col-3 align-self-center>
+          <h2>ราคา/หน่วย</h2>
+        </ion-col>
+        <ion-col col-2 align-self-center>
+          <h2>จำนวน</h2>
+        </ion-col>
+        <!-- <ion-col col-2 align-self-center>
+            <button ion-button>เพิ่ม</button>
+          </ion-col> -->
+      </ion-row>
+>>>>>>> sing update
     </ion-card-content>
   </ion-card>
-  
-  <ion-item *ngFor="let p of products" >
+
+  <ion-item *ngFor="let p of products">
     <ion-row>
-      <ion-col col-5 ailgn-self-center> 
-          {{ p.productName }}
+      <ion-col col-5 ailgn-self-center>
+        <img [src]="p.pieces" height='50' width='50'>
+        {{ p.productName }}
       </ion-col>
       <ion-col col-3 ailgn-self-center text-center>
-          {{ p.price }}
+        {{ p.price }}
       </ion-col>
       <ion-col col-2 ailgn-self-center>
         <ion-item>
-          <ion-input type="number"></ion-input>
+          <ion-input type="number" name="num"></ion-input>
         </ion-item>
       </ion-col>
-        <ion-col col-2 ailgn-self-center>
-        <button ion-button color="secondary">เพิ่ม</button>
+      <ion-col col-2 ailgn-self-center>
+        <button ion-button color="dark" (click)="addToCart()">เพิ่ม</button>
       </ion-col>
     </ion-row>
   </ion-item>
 </ion-content>
 
 <ion-footer padding>
-  <button ion-button block color="primary" (click)="goCreatePage()">เพิ่มรายการสินค้า</button>
+  <button ion-button block color="dark" (click)="goCreatePage()">
+    เพิ่มรายการสินค้า
+  </button>
 </ion-footer>

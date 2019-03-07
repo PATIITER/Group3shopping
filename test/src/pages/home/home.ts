@@ -9,6 +9,8 @@ import { CallApiProvider } from '../../providers/call-api/call-api';
 export class HomePage {
 
   products: any;
+  num: number
+  public productCart : any[]
 
   constructor(public navCtrl: NavController, public CallApi: CallApiProvider) {
 
@@ -29,19 +31,9 @@ export class HomePage {
     console.log("test");
     this.navCtrl.push('CreatePage');
   }
-  // goInfoPage(id: string) {
-  //   console.log("go");
-  //   this.navCtrl.push('InfoPage', { id: id });
-  // }
-  
-  // delete(id :string){
-  //       this.CallApi.DeleteStudent(id)
-  //       .subscribe(data=>{
-  //           console.log("Delete.");
-  //           this.get();
-            
 
-  //       })
+  addToCart() {
 
   }
+}
 
