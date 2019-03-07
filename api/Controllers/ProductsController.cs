@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +9,7 @@ namespace api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class ClassroomController : ControllerBase
+    public class ProductsController : ControllerBase
     {
         public static List<Product> Product = new List<Product>
         {
@@ -55,10 +55,5 @@ namespace api.Controllers
             Product.Remove(oldProduct);
             Product.Add(newProduct);
         }
-        // [HttpDelete("{id}")]
-        // public  void DeleteStudent(string id) {
-        //     var student =Student.Find(it=>it.Id==id);
-        //     Student.Remove(student);
-        // }
      }
 }
