@@ -14,7 +14,7 @@
 
 <ion-content padding>
   <ion-card color="dark">
-    <ion-card-content >
+    <ion-card-content>
       <ion-row text-center>
         <ion-col col-5 align-self-center>
           <h2>ชื่อสินค้า</h2>
@@ -32,25 +32,26 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-item *ngFor="let p of products">
-    <ion-row>
-      <ion-col col-5 ailgn-self-center>
-        <img [src]="p.pieces" height='50' width='50'>
-        {{ p.productName }}
-      </ion-col>
-      <ion-col col-3 ailgn-self-center text-center>
-        {{ p.price }}
-      </ion-col>
-      <ion-col col-2 ailgn-self-center>
-        <ion-item>
-          <ion-input type="number" name="num"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col col-2 ailgn-self-center>
-        <button ion-button color="dark" (click)="addToCart()">เพิ่ม</button>
-      </ion-col>
-    </ion-row>
-  </ion-item>
+  <form [formGroup]="newCart">
+    <ion-item *ngFor="let p of products">
+      <ion-row>
+        <ion-col col-5 ailgn-self-center>
+          {{ p.productName }}
+        </ion-col>
+        <ion-col col-3 ailgn-self-center text-center>
+          {{ p.price }}
+        </ion-col>
+        <ion-col col-2 ailgn-self-center>
+          <ion-item>
+            <ion-input type="number" formControlName="pieces" [(ngModel)]="amout"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2 ailgn-self-center>
+          <button ion-button color="dark" (click)="addToCart()">เพิ่ม</button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </form>
 </ion-content>
 
 <ion-footer padding>

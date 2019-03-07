@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CallApiProvider } from '../../providers/call-api/call-api';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'page-home',
@@ -9,11 +10,15 @@ import { CallApiProvider } from '../../providers/call-api/call-api';
 export class HomePage {
 
   products: any;
-  num: number
-  public productCart : any[]
+  newCart : FormGroup
 
-  constructor(public navCtrl: NavController, public CallApi: CallApiProvider) {
-
+  constructor(public fb: FormBuilder ,public navCtrl: NavController, public CallApi: CallApiProvider) {
+    this.newCart = fb.group ({
+      'id' : null,
+      'productName' : null,
+      'price' : null,
+      '  ' : null,
+    })
   }
 
   ionViewDidEnter() {
@@ -33,7 +38,11 @@ export class HomePage {
   }
 
   addToCart() {
-
+    this.CallApi.AddToCart(this.newCart.value)
+    .subscribe(data => {
+      console.log(this.newCart.value);
+      //this.get();
+    })
   }
 }
 
