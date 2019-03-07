@@ -23,7 +23,7 @@ export class CreatePage {
       'id': null,
       'productName': [null,Validators.required],
       'price': [null,Validators.required],
-      'pieces': [null,Validators.required],
+      'pieces': 0,
 
     })
   }

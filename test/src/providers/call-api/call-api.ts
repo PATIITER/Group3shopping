@@ -30,4 +30,8 @@ export class CallApiProvider {
   // public DeleteStudent(id:string){
   //   return this.http.delete('https://localhost:5001/api/Prosucts/DeleteStudent/'+ id);
   // }
+
+  public AddToCart(newCart : any) {
+    return this.http.post('https://localhost:5001/api/ShoppingCart/Create',newCart);
+  }
 }

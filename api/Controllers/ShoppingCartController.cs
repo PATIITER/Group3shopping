@@ -43,7 +43,7 @@ namespace api.Controllers
         // เพิ่มสินค้าในตะกร้า
         public void Create([FromBody]Cart newCart)
         {
-            newCart.Id = Guid.NewGuid().ToString();
+            // newCart.Id = Guid.NewGuid().ToString();
             Cart.Add(newCart);
         }
 

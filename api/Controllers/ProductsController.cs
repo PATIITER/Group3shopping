@@ -17,19 +17,19 @@ namespace api.Controllers
                 Id = Guid.NewGuid().ToString(),
                 ProductName ="ดินสอ",
                   Price = 5,
-                  Pieces = "https://dxxt5i7fka2g1.cloudfront.net/media/catalog/product/O/F/OFM1502780.jpg"
+                  Pieces = 0
             },
             new Product{
                 Id = Guid.NewGuid().ToString(),
                 ProductName ="ไม้บรรทัด",
                   Price = 15,
-                  Pieces = "https://www.goodchoiz.com/content/images/thumbs/0035572_%E0%B9%89%E0%B8%B1%E0%B9%87-%E0%B8%B4%E0%B9%8C-12_550.jpeg"
+                  Pieces = 0
             },
             new Product{
                 Id = Guid.NewGuid().ToString(),
                 ProductName ="ยางลบ",
                   Price = 10,
-                  Pieces = "https://ssfortunetrade.co.th/wp-content/uploads/2018/09/46.-Eraser-Quantum-QE600.jpg"
+                  Pieces = 0
             },
 
         };

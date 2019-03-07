@@ -5,7 +5,7 @@ namespace api.Models
         public string Id { get; set; }
         public string ProductName { get; set; }
         public int Price { get; set; }
-        public string Pieces { get; set; }
+        public int Pieces { get; set; }
 
     }
 }
