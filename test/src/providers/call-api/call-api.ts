@@ -16,18 +16,18 @@ export class CallApiProvider {
 
   public GetAllProducts()
   {
-      return this.http.get('https://localhost:5001/api/Classroom/GetAllProducts');
+      return this.http.get('https://localhost:5001/api/Prosucts/GetAllProducts');
   }
   public GetProductbyId(id :string){
-    return this.http.get('https://localhost:5001/api/Classroom/GetProductbyId/'+ id);
+    return this.http.get('https://localhost:5001/api/Prosucts/GetProductbyId/'+ id);
   }
   public CreateProduct(newProduct : any){
-    return this.http.post('https://localhost:5001/api/Classroom/CreateProduct',newProduct);
+    return this.http.post('https://localhost:5001/api/Prosucts/CreateProduct',newProduct);
   }
   public UpdateProduct(newProduct : any){
-    return this.http.put('https://localhost:5001/api/Classroom/UpdateProduct',newProduct);
+    return this.http.put('https://localhost:5001/api/Prosucts/UpdateProduct',newProduct);
   }
   // public DeleteStudent(id:string){
-  //   return this.http.delete('https://localhost:5001/api/Classroom/DeleteStudent/'+ id);
+  //   return this.http.delete('https://localhost:5001/api/Prosucts/DeleteStudent/'+ id);
   // }
 }
