@@ -5,7 +5,7 @@
     </ion-title>
 
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="addToCart()">
         <ion-icon name="cart"></ion-icon>
       </button>
     </ion-buttons>
@@ -43,11 +43,13 @@
         </ion-col>
         <ion-col col-2 ailgn-self-center>
           <ion-item>
-            <ion-input type="number" formControlName="pieces" [(ngModel)]="amout"></ion-input>
+            <ion-input type="number" formControlName="sum"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col col-2 ailgn-self-center>
-          <button ion-button color="dark" (click)="addToCart()">เพิ่ม</button>
+          <button ion-button color="dark" (click)="carts(p.productName,p.price,sum)">
+            เพิ่ม
+          </button>
         </ion-col>
       </ion-row>
     </ion-item>
